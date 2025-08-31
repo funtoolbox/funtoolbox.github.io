@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网盘资源搜索导航</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+      }
+      .icon-container {
+        @apply w-16 h-16 rounded-full flex items-center justify-center bg-gray-50;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- 顶部导航 -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4">
+      <h1 class="text-2xl font-bold text-gray-800">网盘资源搜索导航</h1>
+    </div>
+  </header>
+
+  <!-- 搜索区域 -->
+  <section class="py-6 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="relative">
+        <input 
+          type="text" 
+          placeholder="搜索网页内容..." 
+          class="w-full py-3 px-5 pr-12 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+        >
+        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary">
+          <i class="fa fa-search text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资源搜索区域：5个卡片分两排（3+2） -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <h2 class="text-xl font-bold mb-6">网盘资源搜索工具</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. 盘搜 - 云存储图形 -->
+        <div class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+          <div class="icon-container mb-4">
+            <!-- 云存储SVG图形 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C7 3 2.73 6.11 1 10.25C2.73 13.36 7 16 12 16C17 16 21.27 13.36 23 10.25C21.27 6.11 17 3 12 3Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 21V16" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 21V16" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21V16" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">盘搜</h3>
+          <p class="text-gray-600 text-sm mb-4">专业网盘资源搜索引擎,专注于收录全网网盘资源,支持百度网盘、阿里云盘、夸克云盘、迅雷云盘等网盘资源的全文检索。实时更新,海量资源。</p>
+          <a href="https://aiso.lol/" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4 rounded-lg transition-colors">
+            访问网站
+          </a>
+        </div>
+
+        <!-- 2. 影盘社 - 音乐符号图形 -->
+        <div class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+          <div class="icon-container mb-4">
+            <!-- 音乐符号SVG图形 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18V5L19 12L9 18Z" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="19" cy="12" r="3" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">影盘社</h3>
+          <p class="text-gray-600 text-sm mb-4">一款强大的网盘资源搜索工具,支持百度、阿里、夸克、迅雷、UC、蓝奏云等主流网盘资源搜索。每天更新海量资源,自动过滤无效链接,帮助用户快速找到电影、电视剧、音乐、文档、软件等资源。</p>
+          <a href="https://www.melost.cn/" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4 rounded-lg transition-colors">
+            访问网站
+          </a>
+        </div>
+
+        <!-- 3. 网盘搜索 - 电影胶片图形 -->
+        <div class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+          <div class="icon-container mb-4">
+            <!-- 电影胶片SVG图形 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="5" width="6" height="14" rx="1" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="5" width="6" height="14" rx="1" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="3" r="1" fill="#10B981"/>
+              <circle cx="8" cy="21" r="1" fill="#10B981"/>
+              <circle cx="16" cy="3" r="1" fill="#10B981"/>
+              <circle cx="16" cy="21" r="1" fill="#10B981"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">网盘搜索</h3>
+          <p class="text-gray-600 text-sm mb-4">专注于夸克网盘与百度网盘资源的精准搜索,提供高效、便捷的文件查找服务。无论您需要学习资料、影视资源、工作文档还是各类素材,只需输入关键词,即可快速定位夸克及百度网盘中的相关内容。</p>
+          <a href="https://www.80kss.com/" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4 rounded-lg transition-colors">
+            访问网站
+          </a>
+        </div>
+
+        <!-- 4. 盘搜Pro - 数据库图形 -->
+        <div class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+          <div class="icon-container mb-4">
+            <!-- 数据库SVG图形 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="12" cy="5" rx="9" ry="3" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 5V12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 5V12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">盘搜Pro</h3>
+          <p class="text-gray-600 text-sm mb-4">一个专业的网盘资源搜索引擎,旨在为用户提供一个免费、高效的网盘资源搜索平台。用户可以通过盘搜快速找到存储在各大网盘上的资源,包括但不限于阿里云盘、百度网盘、夸克网盘、迅雷网盘。</p>
+          <a href="https://www.panso.pro/" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4 rounded-lg transition-colors">
+            访问网站
+          </a>
+        </div>
+
+        <!-- 5. 小白盘 - 文件图形 -->
+        <div class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+          <div class="icon-container mb-4">
+            <!-- 文件SVG图形 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 2V8H20" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 13H8" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 17H8" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 9H9H8" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">小白盘</h3>
+          <p class="text-gray-600 text-sm mb-4">收录了大量的网盘资源,页面清新,实时检查失效资源,帮您省心快速找到想要的电影,电视剧,小说,文档,音乐,软件,种子等热门网盘资源。</p>
+          <a href="https://www.xiaobaipan.com/" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4 rounded-lg transition-colors">
+            访问网站
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white py-6 mt-8">
+    <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+      <p>网盘资源搜索导航 © 2025 | 点击链接跳转至第三方平台</p>
+    </div>
+  </footer>
+</body>
+</html>
+    
